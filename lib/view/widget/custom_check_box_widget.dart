@@ -31,27 +31,27 @@ class CustomCheckBox extends StatelessWidget {
           decoration: BoxDecoration(
             border: Border.all(
               width: 1.0,
-              color:
-                  isActive ? kSecondaryColor : unSelectedColor ?? kBorderColor,
+              color: isActive
+                  ? kSecondaryColor
+                  : unSelectedColor ?? kBorderColor,
             ),
             shape: BoxShape.circle,
           ),
-          child:
-              !isActive
-                  ? SizedBox()
-                  : Center(
-                    child: AnimatedContainer(
-                      margin: EdgeInsets.all(3),
-                      duration: Duration(milliseconds: 230),
-                      curve: Curves.easeInOut,
-                      height: Get.height,
-                      width: Get.width,
-                      decoration: BoxDecoration(
-                        color: kSecondaryColor,
-                        shape: BoxShape.circle,
-                      ),
+          child: !isActive
+              ? SizedBox()
+              : Center(
+                  child: AnimatedContainer(
+                    margin: EdgeInsets.all(3),
+                    duration: Duration(milliseconds: 230),
+                    curve: Curves.easeInOut,
+                    height: Get.height,
+                    width: Get.width,
+                    decoration: BoxDecoration(
+                      color: kSecondaryColor,
+                      shape: BoxShape.circle,
                     ),
                   ),
+                ),
         ),
       );
     } else {
@@ -70,10 +70,9 @@ class CustomCheckBox extends StatelessWidget {
             color: isActive ? kSecondaryColor : kPrimaryColor,
             borderRadius: BorderRadius.circular(3.3),
           ),
-          child:
-              !isActive
-                  ? SizedBox()
-                  : Icon(Icons.check, size: 16, color: kWhiteColor),
+          child: !isActive
+              ? SizedBox()
+              : Icon(Icons.check, size: 16, color: kPrimaryColor),
         ),
       );
     }

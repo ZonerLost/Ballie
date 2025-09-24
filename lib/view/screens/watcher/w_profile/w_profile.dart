@@ -10,6 +10,8 @@ import 'package:ballie/view/screens/watcher/w_profile/location.dart';
 import 'package:ballie/view/screens/watcher/w_profile/notifications_settings.dart';
 import 'package:ballie/view/screens/watcher/w_profile/w_payment_method/w_payment_methods.dart';
 import 'package:ballie/view/screens/watcher/w_profile/w_upgrade_account.dart';
+import 'package:ballie/view/screens/watcher/w_shop/w_shop.dart';
+import 'package:ballie/view/screens/watcher/w_wallpapers/w_wallpapers.dart';
 import 'package:ballie/view/widget/blur_container_widget.dart';
 import 'package:ballie/view/widget/common_image_view_widget.dart';
 import 'package:ballie/view/widget/custom_container_widget.dart';
@@ -109,10 +111,10 @@ class WProfile extends StatelessWidget {
                     onTap: () {
                       switch (index) {
                         case 0:
-                          // Shop tapped
+                          Get.to(() => WShop());
                           break;
                         case 1:
-                          // Wallpapers tapped
+                          Get.to(() => WWallpapers());
                           break;
                         case 2:
                           Get.to(() => WMiniGame());

@@ -14,6 +14,10 @@ class Assets {
   /// assets/images/add_image.png
   static const String imagesAddImage = "assets/images/add_image.png";
 
+  /// Assets for imagesAddToCart
+  /// assets/images/add_to_cart.png
+  static const String imagesAddToCart = "assets/images/add_to_cart.png";
+
   /// Assets for imagesAppFeedback
   /// assets/images/app_feedback.png
   static const String imagesAppFeedback = "assets/images/app_feedback.png";
@@ -70,6 +74,10 @@ class Assets {
   /// assets/images/camera.png
   static const String imagesCamera = "assets/images/camera.png";
 
+  /// Assets for imagesCart
+  /// assets/images/cart.png
+  static const String imagesCart = "assets/images/cart.png";
+
   /// Assets for imagesCh
   /// assets/images/ch.png
   static const String imagesCh = "assets/images/ch.png";
@@ -85,6 +93,10 @@ class Assets {
   /// Assets for imagesDeactivate
   /// assets/images/deactivate.png
   static const String imagesDeactivate = "assets/images/deactivate.png";
+
+  /// Assets for imagesDel
+  /// assets/images/del.png
+  static const String imagesDel = "assets/images/del.png";
 
   /// Assets for imagesDiscount
   /// assets/images/discount.png
@@ -137,6 +149,10 @@ class Assets {
   /// Assets for imagesFootball
   /// assets/images/football.png
   static const String imagesFootball = "assets/images/football.png";
+
+  /// Assets for imagesFt
+  /// assets/images/ft.png
+  static const String imagesFt = "assets/images/ft.png";
 
   /// Assets for imagesFubo
   /// assets/images/fubo.png
@@ -306,6 +322,10 @@ class Assets {
   /// assets/images/play.png
   static const String imagesPlay = "assets/images/play.png";
 
+  /// Assets for imagesPlus
+  /// assets/images/plus.png
+  static const String imagesPlus = "assets/images/plus.png";
+
   /// Assets for imagesPoint
   /// assets/images/point.png
   static const String imagesPoint = "assets/images/point.png";
@@ -381,6 +401,10 @@ class Assets {
   /// Assets for imagesSubscription
   /// assets/images/subscription.png
   static const String imagesSubscription = "assets/images/subscription.png";
+
+  /// Assets for imagesTrash
+  /// assets/images/trash.png
+  static const String imagesTrash = "assets/images/trash.png";
 
   /// Assets for imagesTs
   /// assets/images/ts.png
