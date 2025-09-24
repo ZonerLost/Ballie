@@ -15,21 +15,47 @@ class WUpgradeAccount extends StatelessWidget {
     final plans = [
       {
         'title': 'Free Account',
-        'price': '\$20.00',
-        'amount': '\$0.00',
+        'amount': '€0.00',
         'access': 'Limited Access',
-        'features': ['Basic map access', 'Limited club following'],
+        'features': [
+          '3 favorite clubs',
+          '2 favorite cafes/bars',
+          'Ads',
+          '50 Ballie Coins per week',
+          '5 friends following',
+        ],
         'button': 'Current Plan',
       },
       {
         'title': 'Premium Account',
-        'price': '\$20.00',
-        'amount': '\$20.00',
+        'amount': '€1.99',
+        'access': 'Standard Access',
+        'features': [
+          '10 favorite clubs',
+          '5 favorite cafes/bars',
+          'No ads',
+          '200 Ballie Coins per week',
+          '3 extra themes',
+          'Exclusive Content',
+          'Unlimited friends following',
+          'Local bar deals',
+        ],
+        'button': 'Choose Plan',
+      },
+      {
+        'title': 'Diamond Account',
+        'amount': '€4.99',
         'access': 'Full Access',
         'features': [
-          'Unlimited club follows',
-          'Early feature access',
-          'Loyalty rewards bonus',
+          'Unlimited favorite clubs',
+          'Unlimited favorite cafes/bars',
+          'No ads',
+          '500 Ballie Coins per week',
+          '10 extra themes',
+          'Exclusive Content',
+          'Unlimited friends following',
+          'Local bar deals',
+          'New features early access',
         ],
         'button': 'Choose Plan',
       },
@@ -101,7 +127,7 @@ class WUpgradeAccount extends StatelessWidget {
                       );
                     }).toList(),
                     SizedBox(height: 14),
-                    index == 1
+                    index != 0
                         ? MyBorderButton(
                             buttonText: 'Choose Plan',
                             onTap: () {},

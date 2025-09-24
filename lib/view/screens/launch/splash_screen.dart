@@ -3,6 +3,7 @@ import 'package:ballie/constants/app_colors.dart';
 import 'package:ballie/constants/app_images.dart';
 import 'package:ballie/view/screens/auth/login.dart';
 import 'package:ballie/view/screens/launch/get_started.dart';
+import 'package:ballie/view/screens/launch/select_club.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -19,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void splashScreenHandler() {
-    Timer(Duration(seconds: 3), () => Get.offAll(() => GetStarted()));
+    Timer(Duration(seconds: 3), () => Get.offAll(() => SelectClub()));
   }
 
   @override

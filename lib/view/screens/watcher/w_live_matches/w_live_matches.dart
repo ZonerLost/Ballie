@@ -28,7 +28,7 @@ class WLiveMatches extends StatelessWidget {
                 onTap: () {
                   Get.to(() => WScan());
                 },
-                child: Image.asset(Assets.imagesScan, height: 28),
+                child: Image.asset(Assets.imagesScanItem, height: 32),
               ),
             ),
             SizedBox(width: 10),

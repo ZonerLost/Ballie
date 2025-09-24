@@ -120,6 +120,184 @@ class WMatchScreening extends StatelessWidget {
                     lineHeight: 1.5,
                     paddingBottom: 20,
                   ),
+                  MyText(
+                    text: 'Upcoming Matches',
+                    size: 16,
+                    weight: FontWeight.w600,
+                    paddingBottom: 12,
+                  ),
+                  BlurContainer(
+                    child: Padding(
+                      padding: EdgeInsets.all(20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Row(
+                            children: [
+                              CommonImageView(
+                                height: 32,
+                                width: 32,
+                                radius: 100,
+                                fit: BoxFit.cover,
+                                url: dummyImg,
+                              ),
+                            ],
+                          ),
+                          MyText(
+                            paddingTop: 10,
+                            paddingBottom: 10,
+                            text: 'UEFA Champions League',
+                            size: 14,
+                            weight: FontWeight.w500,
+                          ),
+
+                          Row(
+                            spacing: 40,
+                            children: [
+                              Expanded(
+                                child: Row(
+                                  children: [
+                                    CommonImageView(
+                                      height: 32,
+                                      width: 32,
+                                      radius: 100,
+                                      fit: BoxFit.cover,
+                                      url: dummyImg,
+                                    ),
+                                    Expanded(
+                                      child: MyText(
+                                        text: 'RMD',
+                                        size: 14,
+                                        weight: FontWeight.w500,
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              MyText(
+                                text: 'VS',
+                                size: 16,
+                                weight: FontWeight.w700,
+                                textAlign: TextAlign.center,
+                              ),
+                              Expanded(
+                                child: Row(
+                                  children: [
+                                    Expanded(
+                                      child: MyText(
+                                        text: 'RMD',
+                                        size: 14,
+                                        weight: FontWeight.w500,
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    ),
+                                    CommonImageView(
+                                      height: 32,
+                                      width: 32,
+                                      radius: 100,
+                                      fit: BoxFit.cover,
+                                      url: dummyImg,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 12),
+                  BlurContainer(
+                    child: Padding(
+                      padding: EdgeInsets.all(20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Row(
+                            children: [
+                              CommonImageView(
+                                height: 32,
+                                width: 32,
+                                radius: 100,
+                                fit: BoxFit.cover,
+                                url: dummyImg,
+                              ),
+                            ],
+                          ),
+                          MyText(
+                            paddingTop: 10,
+                            paddingBottom: 10,
+                            text: 'UEFA Champions League',
+                            size: 14,
+                            weight: FontWeight.w500,
+                          ),
+
+                          Row(
+                            spacing: 40,
+                            children: [
+                              Expanded(
+                                child: Row(
+                                  children: [
+                                    CommonImageView(
+                                      height: 32,
+                                      width: 32,
+                                      radius: 100,
+                                      fit: BoxFit.cover,
+                                      url: dummyImg,
+                                    ),
+                                    Expanded(
+                                      child: MyText(
+                                        text: 'RMD',
+                                        size: 14,
+                                        weight: FontWeight.w500,
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              MyText(
+                                text: 'VS',
+                                size: 16,
+                                weight: FontWeight.w700,
+                                textAlign: TextAlign.center,
+                              ),
+                              Expanded(
+                                child: Row(
+                                  children: [
+                                    Expanded(
+                                      child: MyText(
+                                        text: 'RMD',
+                                        size: 14,
+                                        weight: FontWeight.w500,
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    ),
+                                    CommonImageView(
+                                      height: 32,
+                                      width: 32,
+                                      radius: 100,
+                                      fit: BoxFit.cover,
+                                      url: dummyImg,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  MyText(
+                    paddingTop: 20,
+                    text: 'Review Venue',
+                    size: 16,
+                    weight: FontWeight.w600,
+                    paddingBottom: 12,
+                  ),
                   BlurContainer(
                     child: Padding(
                       padding: EdgeInsets.all(20),

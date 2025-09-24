@@ -3,6 +3,7 @@ import 'package:ballie/constants/app_fonts.dart';
 import 'package:ballie/constants/app_images.dart';
 import 'package:ballie/constants/app_sizes.dart';
 import 'package:ballie/main.dart';
+import 'package:ballie/view/screens/owner/o_home/o_club_review.dart';
 import 'package:ballie/view/screens/owner/o_home/o_match_review.dart';
 import 'package:ballie/view/screens/watcher/w_home/w_match_review.dart';
 import 'package:ballie/view/widget/blur_container_widget.dart';
@@ -151,12 +152,17 @@ class OLeagueMatches extends StatelessWidget {
                           Expanded(
                             child: Row(
                               children: [
-                                CommonImageView(
-                                  height: 24,
-                                  width: 24,
-                                  radius: 100,
-                                  fit: BoxFit.cover,
-                                  url: dummyImg,
+                                GestureDetector(
+                                  onTap: () {
+                                    Get.to(() => OClubReview());
+                                  },
+                                  child: CommonImageView(
+                                    height: 24,
+                                    width: 24,
+                                    radius: 100,
+                                    fit: BoxFit.cover,
+                                    url: dummyImg,
+                                  ),
                                 ),
                                 Expanded(
                                   child: MyText(
@@ -183,12 +189,17 @@ class OLeagueMatches extends StatelessWidget {
                                     textAlign: TextAlign.center,
                                   ),
                                 ),
-                                CommonImageView(
-                                  height: 24,
-                                  width: 24,
-                                  radius: 100,
-                                  fit: BoxFit.cover,
-                                  url: dummyImg,
+                                GestureDetector(
+                                  onTap: () {
+                                    Get.to(() => OClubReview());
+                                  },
+                                  child: CommonImageView(
+                                    height: 24,
+                                    width: 24,
+                                    radius: 100,
+                                    fit: BoxFit.cover,
+                                    url: dummyImg,
+                                  ),
                                 ),
                               ],
                             ),

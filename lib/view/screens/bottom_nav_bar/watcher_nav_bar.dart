@@ -7,6 +7,7 @@ import 'package:ballie/main.dart';
 import 'package:ballie/view/screens/watcher/w_home/w_home.dart';
 import 'package:ballie/view/screens/watcher/w_live_football_locations/w_live_football_locations.dart';
 import 'package:ballie/view/screens/watcher/w_match_stats/w_match_stats.dart';
+import 'package:ballie/view/screens/watcher/w_news/w_news.dart';
 import 'package:ballie/view/screens/watcher/w_profile/w_profile.dart';
 import 'package:ballie/view/screens/watcher/w_scan/w_scan.dart';
 import 'package:ballie/view/screens/watcher/w_live_matches/w_live_matches.dart';
@@ -35,9 +36,10 @@ class _WatcherNavBarState extends State<WatcherNavBar> {
   Widget build(BuildContext context) {
     final List<Map<String, dynamic>> _items = [
       {'icon': Assets.imagesHome},
-      {'icon': Assets.imagesMap},
+      {'icon': Assets.imagesPin},
       {'icon': Assets.imagesStreaming},
       {'icon': Assets.imagesRadar},
+      {'icon': Assets.imagesNews},
       {'icon': Assets.imagesStreaming},
     ];
 
@@ -46,6 +48,7 @@ class _WatcherNavBarState extends State<WatcherNavBar> {
       WLiveFootballLocations(),
       WLiveMatches(),
       WMatchStats(),
+      WNews(),
       WProfile(),
     ];
 
@@ -71,13 +74,13 @@ class _WatcherNavBarState extends State<WatcherNavBar> {
             padding: EdgeInsets.all(8),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(50),
-              color: kTertiaryColor.withOpacity(0.2),
+              color: kTertiaryColor.withValues(alpha: .2),
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: List.generate(_items.length, (index) {
                 var data = _items[index];
-                return index == 4
+                return index == 5
                     ? GestureDetector(
                         onTap: () => _getCurrentIndex(index),
                         child: CommonImageView(

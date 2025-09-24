@@ -7,6 +7,7 @@ import 'package:ballie/view/screens/watcher/w_profile/language.dart';
 import 'package:ballie/view/screens/watcher/w_profile/linked_profile.dart';
 import 'package:ballie/view/screens/watcher/w_profile/location.dart';
 import 'package:ballie/view/screens/watcher/w_profile/notifications_settings.dart';
+import 'package:ballie/view/screens/watcher/w_profile/w_payment_method/w_payment_methods.dart';
 import 'package:ballie/view/screens/watcher/w_profile/w_upgrade_account.dart';
 import 'package:ballie/view/widget/blur_container_widget.dart';
 import 'package:ballie/view/widget/common_image_view_widget.dart';
@@ -36,11 +37,7 @@ class WProfile extends StatelessWidget {
             Container(
               padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(Assets.imagesProfileCardBg),
-                  fit: BoxFit.cover,
-                ),
-                border: Border.all(width: 1.0, color: kSecondaryColor),
+                color: kTertiaryColor.withValues(alpha: 0.2),
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Row(
@@ -49,6 +46,7 @@ class WProfile extends StatelessWidget {
                     height: 48,
                     width: 48,
                     radius: 100,
+                    fit: BoxFit.cover,
                     url: dummyImg,
                   ),
                   SizedBox(width: 10),
@@ -71,11 +69,65 @@ class WProfile extends StatelessWidget {
                       ],
                     ),
                   ),
+                  Container(
+                    height: 26,
+                    padding: EdgeInsets.symmetric(horizontal: 8),
+                    decoration: BoxDecoration(
+                      color: kSecondaryColor,
+                      borderRadius: BorderRadius.circular(50),
+                    ),
+                    child: Row(
+                      spacing: 4,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset(Assets.imagesPoint, height: 16, width: 16),
+                        MyText(
+                          text: '300',
+                          size: 10,
+                          weight: FontWeight.w600,
+                          color: kPrimaryColor,
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
+            SizedBox(height: 30),
+            Row(
+              spacing: 10,
+              children: List.generate(3, (index) {
+                final items = [
+                  {'image': Assets.imagesShop, 'title': 'Shop'},
+                  {'image': Assets.imagesShop, 'title': 'Wallpapers'},
+                  {'image': Assets.imagesGame, 'title': 'Game'},
+                ];
+                final item = items[index];
+                return Expanded(
+                  child: Container(
+                    height: 85,
+                    decoration: BoxDecoration(
+                      color: kSecondaryColor,
+                      borderRadius: BorderRadius.circular(14),
+                    ),
+                    child: Column(
+                      spacing: 8,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset(item['image']!, height: 24, width: 24),
+                        MyText(
+                          text: item['title']!,
+                          size: 13,
+                          color: kPrimaryColor,
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              }),
+            ),
             MyText(
-              paddingTop: 30,
+              paddingTop: 20,
               text: 'Account',
               size: 12,
               weight: FontWeight.w600,
@@ -104,10 +156,17 @@ class WProfile extends StatelessWidget {
                       },
                     ),
                     _ProfileTile(
-                      icon: Assets.imagesUpgradeAccount,
+                      icon: Assets.imagesSubscription,
                       title: 'Upgrade Account',
                       onTap: () {
                         Get.to(() => WUpgradeAccount());
+                      },
+                    ),
+                    _ProfileTile(
+                      icon: Assets.imagesPayment,
+                      title: 'Payment Methods',
+                      onTap: () {
+                        Get.to(() => WPaymentMethods());
                       },
                     ),
                   ],

@@ -82,7 +82,7 @@ class WHome extends StatelessWidget {
                 onTap: () {
                   Get.to(() => WScan());
                 },
-                child: Image.asset(Assets.imagesScan, height: 28),
+                child: Image.asset(Assets.imagesScanItem, height: 32),
               ),
             ),
             SizedBox(width: 10),
@@ -103,6 +103,34 @@ class WHome extends StatelessWidget {
           padding: AppSizes.DEFAULT,
           physics: BouncingScrollPhysics(),
           children: [
+            Row(
+              children: [
+                Container(
+                  height: 26,
+                  padding: EdgeInsets.symmetric(horizontal: 8),
+                  decoration: BoxDecoration(
+                    color: kSecondaryColor,
+                    borderRadius: BorderRadius.circular(50),
+                  ),
+                  child: Row(
+                    spacing: 4,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(Assets.imagesPoint, height: 16, width: 16),
+                      MyText(
+                        text: '300',
+                        size: 10,
+                        weight: FontWeight.w600,
+                        color: kPrimaryColor,
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 16),
+            MyText(text: 'Ballie for You', size: 22, weight: FontWeight.w600),
+            SizedBox(height: 30),
             _HeadingTile(
               title: 'Leagues',
               onTap: () {
@@ -192,7 +220,321 @@ class WHome extends StatelessWidget {
               ),
             ),
             SizedBox(height: 30),
-            _HeadingTile(title: 'Ballie For You', onTap: () {}),
+            _HeadingTile(title: 'Live matches in your region', onTap: () {}),
+            SizedBox(height: 12),
+            BlurContainer(
+              child: Padding(
+                padding: const EdgeInsets.all(12),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Row(
+                      children: [
+                        CommonImageView(
+                          height: 28,
+                          width: 28,
+                          radius: 100,
+                          fit: BoxFit.cover,
+                          url: dummyImg,
+                        ),
+                      ],
+                    ),
+                    MyText(
+                      paddingTop: 10,
+                      paddingBottom: 10,
+                      text: 'UEFA Champions League',
+                      size: 14,
+                      weight: FontWeight.w500,
+                    ),
+
+                    Row(
+                      children: [
+                        Image.asset(Assets.imagesVideoCamera, height: 18),
+                        Expanded(
+                          child: MyText(
+                            paddingLeft: 5,
+                            text: 'Live Matches',
+                            size: 12,
+                            color: kRedColor,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 10),
+                    ...List.generate(2, (i) {
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 5),
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: Row(
+                                children: [
+                                  CommonImageView(
+                                    height: 16,
+                                    width: 16,
+                                    radius: 100,
+                                    fit: BoxFit.cover,
+                                    url: dummyImg,
+                                  ),
+                                  Expanded(
+                                    child: MyText(
+                                      text: 'RMD',
+                                      size: 10,
+                                      maxLines: 1,
+                                      textOverflow: TextOverflow.ellipsis,
+                                      textAlign: TextAlign.center,
+                                    ),
+                                  ),
+                                  MyText(
+                                    text: '2',
+                                    size: 12,
+                                    maxLines: 1,
+                                    weight: FontWeight.w600,
+                                    textOverflow: TextOverflow.ellipsis,
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            MyText(
+                              paddingLeft: 5,
+                              paddingRight: 5,
+                              text: 'VS',
+                              size: 10,
+                              color: kQuaternaryColor,
+                              weight: FontWeight.w500,
+                            ),
+                            MyText(
+                              text: '1',
+                              size: 12,
+                              maxLines: 1,
+                              weight: FontWeight.w600,
+                              textOverflow: TextOverflow.ellipsis,
+                              textAlign: TextAlign.center,
+                            ),
+                            Expanded(
+                              child: Row(
+                                children: [
+                                  Expanded(
+                                    child: MyText(
+                                      text: 'RMD',
+                                      size: 10,
+                                      paddingRight: 4,
+                                      maxLines: 1,
+                                      textOverflow: TextOverflow.ellipsis,
+                                      textAlign: TextAlign.center,
+                                    ),
+                                  ),
+                                  CommonImageView(
+                                    height: 16,
+                                    width: 16,
+                                    radius: 100,
+                                    fit: BoxFit.cover,
+                                    url: dummyImg,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            MyText(
+                              paddingLeft: 5,
+                              paddingRight: 10,
+                              text: '32:15',
+                              size: 10,
+                              color: kQuaternaryColor,
+                              weight: FontWeight.w500,
+                            ),
+                            Container(
+                              width: 90,
+                              height: 25,
+                              decoration: BoxDecoration(
+                                color: kRedColor,
+                                borderRadius: BorderRadius.circular(50),
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Image.asset(
+                                    Assets.imagesVideoCamera,
+                                    height: 13,
+                                    color: kTertiaryColor,
+                                  ),
+                                  MyText(
+                                    paddingLeft: 3,
+                                    paddingRight: 3,
+                                    text: 'Live Matches',
+                                    size: 9,
+                                    color: kTertiaryColor,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      );
+                    }),
+                  ],
+                ),
+              ),
+            ),
+
+            SizedBox(height: 12),
+            BlurContainer(
+              child: Padding(
+                padding: const EdgeInsets.all(12),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Row(
+                      children: [
+                        CommonImageView(
+                          height: 28,
+                          width: 28,
+                          radius: 100,
+                          fit: BoxFit.cover,
+                          url: dummyImg,
+                        ),
+                      ],
+                    ),
+                    MyText(
+                      paddingTop: 10,
+                      paddingBottom: 10,
+                      text: 'UEFA Champions League',
+                      size: 14,
+                      weight: FontWeight.w500,
+                    ),
+
+                    Row(
+                      children: [
+                        Image.asset(Assets.imagesVideoCamera, height: 18),
+                        Expanded(
+                          child: MyText(
+                            paddingLeft: 5,
+                            text: 'Live Matches',
+                            size: 12,
+                            color: kRedColor,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 10),
+                    ...List.generate(2, (i) {
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 5),
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: Row(
+                                children: [
+                                  CommonImageView(
+                                    height: 16,
+                                    width: 16,
+                                    radius: 100,
+                                    fit: BoxFit.cover,
+                                    url: dummyImg,
+                                  ),
+                                  Expanded(
+                                    child: MyText(
+                                      text: 'RMD',
+                                      size: 10,
+                                      maxLines: 1,
+                                      textOverflow: TextOverflow.ellipsis,
+                                      textAlign: TextAlign.center,
+                                    ),
+                                  ),
+                                  MyText(
+                                    text: '2',
+                                    size: 12,
+                                    maxLines: 1,
+                                    weight: FontWeight.w600,
+                                    textOverflow: TextOverflow.ellipsis,
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            MyText(
+                              paddingLeft: 5,
+                              paddingRight: 5,
+                              text: 'VS',
+                              size: 10,
+                              color: kQuaternaryColor,
+                              weight: FontWeight.w500,
+                            ),
+                            MyText(
+                              text: '1',
+                              size: 12,
+                              maxLines: 1,
+                              weight: FontWeight.w600,
+                              textOverflow: TextOverflow.ellipsis,
+                              textAlign: TextAlign.center,
+                            ),
+                            Expanded(
+                              child: Row(
+                                children: [
+                                  Expanded(
+                                    child: MyText(
+                                      text: 'RMD',
+                                      size: 10,
+                                      paddingRight: 4,
+                                      maxLines: 1,
+                                      textOverflow: TextOverflow.ellipsis,
+                                      textAlign: TextAlign.center,
+                                    ),
+                                  ),
+                                  CommonImageView(
+                                    height: 16,
+                                    width: 16,
+                                    radius: 100,
+                                    fit: BoxFit.cover,
+                                    url: dummyImg,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            MyText(
+                              paddingLeft: 5,
+                              paddingRight: 10,
+                              text: '32:15',
+                              size: 10,
+                              color: kQuaternaryColor,
+                              weight: FontWeight.w500,
+                            ),
+                            Container(
+                              width: 90,
+                              height: 25,
+                              decoration: BoxDecoration(
+                                color: kRedColor,
+                                borderRadius: BorderRadius.circular(50),
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Image.asset(
+                                    Assets.imagesVideoCamera,
+                                    height: 13,
+                                    color: kTertiaryColor,
+                                  ),
+                                  MyText(
+                                    paddingLeft: 3,
+                                    paddingRight: 3,
+                                    text: 'Live Matches',
+                                    size: 9,
+                                    color: kTertiaryColor,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      );
+                    }),
+                  ],
+                ),
+              ),
+            ),
+
+            SizedBox(height: 20),
+            _HeadingTile(title: 'Nearby Venues', onTap: () {}),
             SizedBox(height: 12),
             GridView.builder(
               shrinkWrap: true,
@@ -200,101 +542,48 @@ class WHome extends StatelessWidget {
               physics: BouncingScrollPhysics(),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                mainAxisExtent: 230,
+                mainAxisExtent: 160,
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 10,
               ),
               itemCount: 2,
               itemBuilder: (context, index) {
-                return BlurContainer(
-                  child: Padding(
-                    padding: const EdgeInsets.all(12),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        MyText(
-                          paddingTop: 8,
-                          text: index == 0 ? 'Group A' : 'Group B',
-                          weight: FontWeight.w500,
-                          paddingBottom: 10,
-                        ),
-                        Row(
-                          children: [
-                            Image.asset(Assets.imagesVideoCamera, height: 18),
-                            Expanded(
-                              child: MyText(
-                                paddingLeft: 5,
-                                text: 'Live Matches',
-                                size: 12,
-                                color: kRedColor,
-                              ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(height: 10),
-                        ...List.generate(4, (i) {
-                          return Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 5),
-                            child: Row(
-                              spacing: 12,
+                return GestureDetector(
+                  onTap: () {},
+                  child: BlurContainer(
+                    radius: 10,
+                    child: Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Expanded(
+                            child: Stack(
                               children: [
-                                Expanded(
-                                  child: Row(
-                                    children: [
-                                      CommonImageView(
-                                        height: 20,
-                                        width: 20,
-                                        radius: 100,
-                                        fit: BoxFit.cover,
-                                        url: dummyImg,
-                                      ),
-                                      Expanded(
-                                        child: MyText(
-                                          paddingLeft: 4,
-                                          text: 'RMD',
-                                          size: 10,
-                                          maxLines: 1,
-                                          textOverflow: TextOverflow.ellipsis,
-                                          textAlign: TextAlign.center,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
+                                CommonImageView(
+                                  imagePath: Assets.imagesDummyMap,
+                                  width: Get.width,
+                                  fit: BoxFit.cover,
+                                  radius: 6,
                                 ),
-                                MyText(
-                                  text: 'VS',
-                                  size: 10,
-                                  color: kQuaternaryColor,
-                                  weight: FontWeight.w500,
-                                ),
-                                Expanded(
-                                  child: Row(
-                                    children: [
-                                      Expanded(
-                                        child: MyText(
-                                          text: 'RMD',
-                                          size: 10,
-                                          paddingRight: 4,
-                                          maxLines: 1,
-                                          textOverflow: TextOverflow.ellipsis,
-                                          textAlign: TextAlign.center,
-                                        ),
-                                      ),
-                                      CommonImageView(
-                                        height: 20,
-                                        width: 20,
-                                        radius: 100,
-                                        fit: BoxFit.cover,
-                                        url: dummyImg,
-                                      ),
-                                    ],
+                                Center(
+                                  child: Image.asset(
+                                    Assets.imagesMarker,
+                                    height: 32,
                                   ),
                                 ),
                               ],
                             ),
-                          );
-                        }),
-                      ],
+                          ),
+                          MyText(
+                            paddingTop: 10,
+                            text: 'Danish Bar',
+                            size: 14,
+                            color: kTertiaryColor,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 );
