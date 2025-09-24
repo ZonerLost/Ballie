@@ -134,6 +134,10 @@ class Assets {
   /// assets/images/food_discount.png
   static const String imagesFoodDiscount = "assets/images/food_discount.png";
 
+  /// Assets for imagesFootball
+  /// assets/images/football.png
+  static const String imagesFootball = "assets/images/football.png";
+
   /// Assets for imagesFubo
   /// assets/images/fubo.png
   static const String imagesFubo = "assets/images/fubo.png";
@@ -153,6 +157,10 @@ class Assets {
   /// Assets for imagesGetStarted
   /// assets/images/get_started.png
   static const String imagesGetStarted = "assets/images/get_started.png";
+
+  /// Assets for imagesGoal
+  /// assets/images/goal.png
+  static const String imagesGoal = "assets/images/goal.png";
 
   /// Assets for imagesGoogle
   /// assets/images/google.png

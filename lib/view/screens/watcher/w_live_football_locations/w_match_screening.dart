@@ -229,7 +229,7 @@ class WMatchScreening extends StatelessWidget {
                           MyText(
                             paddingTop: 10,
                             paddingBottom: 10,
-                            text: 'UEFA Champions League',
+                            text: 'English Premium League',
                             size: 14,
                             weight: FontWeight.w500,
                           ),

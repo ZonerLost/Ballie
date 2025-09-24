@@ -2,6 +2,7 @@ import 'package:ballie/constants/app_colors.dart';
 import 'package:ballie/constants/app_images.dart';
 import 'package:ballie/constants/app_sizes.dart';
 import 'package:ballie/main.dart';
+import 'package:ballie/view/screens/watcher/w_mini_game/w_mini_game.dart';
 import 'package:ballie/view/screens/watcher/w_profile/edit_profile.dart';
 import 'package:ballie/view/screens/watcher/w_profile/language.dart';
 import 'package:ballie/view/screens/watcher/w_profile/linked_profile.dart';
@@ -104,23 +105,38 @@ class WProfile extends StatelessWidget {
                 ];
                 final item = items[index];
                 return Expanded(
-                  child: Container(
-                    height: 85,
-                    decoration: BoxDecoration(
-                      color: kSecondaryColor,
-                      borderRadius: BorderRadius.circular(14),
-                    ),
-                    child: Column(
-                      spacing: 8,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset(item['image']!, height: 24, width: 24),
-                        MyText(
-                          text: item['title']!,
-                          size: 13,
-                          color: kPrimaryColor,
-                        ),
-                      ],
+                  child: GestureDetector(
+                    onTap: () {
+                      switch (index) {
+                        case 0:
+                          // Shop tapped
+                          break;
+                        case 1:
+                          // Wallpapers tapped
+                          break;
+                        case 2:
+                          Get.to(() => WMiniGame());
+                          break;
+                      }
+                    },
+                    child: Container(
+                      height: 85,
+                      decoration: BoxDecoration(
+                        color: kSecondaryColor,
+                        borderRadius: BorderRadius.circular(14),
+                      ),
+                      child: Column(
+                        spacing: 8,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(item['image']!, height: 24, width: 24),
+                          MyText(
+                            text: item['title']!,
+                            size: 13,
+                            color: kPrimaryColor,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 );

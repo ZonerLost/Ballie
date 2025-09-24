@@ -15,16 +15,18 @@ AppBar simpleAppBar({
 }) {
   return AppBar(
     elevation: 0,
+    titleSpacing: 10,
     backgroundColor: bgColor ?? Colors.transparent,
     automaticallyImplyLeading: false,
     centerTitle: centerTitle,
     leading: haveLeading
         ? leading ??
               Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(left: 5),
+                    padding: const EdgeInsets.only(right: 5),
                     child: GestureDetector(
                       onTap: onLeadingTap ?? () => Get.back(),
                       child: Image.asset(Assets.imagesArrowBack, height: 32),
