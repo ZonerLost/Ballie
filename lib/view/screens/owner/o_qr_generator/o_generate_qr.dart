@@ -1,3 +1,4 @@
+import 'package:ballie/constants/app_colors.dart';
 import 'package:ballie/constants/app_sizes.dart';
 import 'package:ballie/view/screens/owner/o_qr_generator/o_qr_preview.dart';
 import 'package:ballie/view/widget/blur_container_widget.dart';
@@ -59,6 +60,35 @@ class OGenerateQr extends StatelessWidget {
                         ),
                       ],
                     ),
+                    CustomDropDown(
+                      labelText: 'Items',
+                      hint: 'Iced Tea',
+                      items: ['Iced Tea'],
+                      onChanged: (val) {},
+                      selectedValue: 'Iced Tea',
+                      marginBottom: 12,
+                    ),
+                    Wrap(
+                      spacing: 8,
+                      children: List.generate(2, (index) {
+                        return Container(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 10,
+                            vertical: 8,
+                          ),
+                          decoration: BoxDecoration(
+                            color: kSecondaryColor,
+                            borderRadius: BorderRadius.circular(50),
+                          ),
+                          child: MyText(
+                            text: index == 0 ? 'Pizza' : 'Pancakes',
+                            size: 12,
+                            color: kPrimaryColor,
+                          ),
+                        );
+                      }),
+                    ),
+                    SizedBox(height: 16),
                     MyTextField(
                       labelText: 'Discount',
                       hintText: '50%',

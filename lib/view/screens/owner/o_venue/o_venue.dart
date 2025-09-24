@@ -3,14 +3,11 @@ import 'package:ballie/constants/app_fonts.dart';
 import 'package:ballie/constants/app_images.dart';
 import 'package:ballie/constants/app_sizes.dart';
 import 'package:ballie/main.dart';
-import 'package:ballie/view/screens/owner/o_notifications/o_notifications.dart';
-import 'package:ballie/view/screens/owner/o_venue/o_match_screening.dart';
+import 'package:ballie/view/screens/owner/o_venue/o_add_venue.dart';
 import 'package:ballie/view/screens/owner/o_venue/o_venue_detail.dart';
-import 'package:ballie/view/screens/watcher/w_notifications/w_notifications.dart';
 import 'package:ballie/view/widget/blur_container_widget.dart';
 import 'package:ballie/view/widget/common_image_view_widget.dart';
 import 'package:ballie/view/widget/custom_container_widget.dart';
-import 'package:ballie/view/widget/match_score_row_widget.dart';
 import 'package:ballie/view/widget/my_text_widget.dart';
 import 'package:easy_date_timeline/easy_date_timeline.dart';
 import 'package:flutter/material.dart';
@@ -39,9 +36,9 @@ class _OVenueState extends State<OVenue> {
             Center(
               child: GestureDetector(
                 onTap: () {
-                  Get.to(() => ONotifications());
+                  Get.to(() => OAddVenue());
                 },
-                child: Image.asset(Assets.imagesNotification, height: 32),
+                child: Image.asset(Assets.imagesAdd, height: 32),
               ),
             ),
             SizedBox(width: 20),
@@ -124,7 +121,7 @@ class _OVenueState extends State<OVenue> {
             SizedBox(height: 20),
             GestureDetector(
               onTap: () {
-                Get.to(() => OMatchScreening());
+                Get.to(() => OVenueDetail());
               },
               child: _VenueScreening(),
             ),
@@ -215,8 +212,6 @@ class _OVenueState extends State<OVenue> {
 }
 
 class _VenueScreening extends StatelessWidget {
-  const _VenueScreening({super.key});
-
   @override
   Widget build(BuildContext context) {
     return BlurContainer(
@@ -236,12 +231,7 @@ class _VenueScreening extends StatelessWidget {
                     fit: BoxFit.cover,
                     radius: 10,
                   ),
-                  Center(
-                    child: Image.asset(
-                      Assets.imagesVenueScreeningMarker,
-                      height: 56,
-                    ),
-                  ),
+                  Center(child: Image.asset(Assets.imagesMarker, height: 56)),
                 ],
               ),
             ),

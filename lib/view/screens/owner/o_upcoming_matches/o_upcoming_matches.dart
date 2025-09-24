@@ -26,7 +26,7 @@ class _OUpcomingMatchesState extends State<OUpcomingMatches> {
 
   @override
   Widget build(BuildContext context) {
-    return CustomContainer(
+    return CustomContainer2(
       child: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBar(
@@ -134,7 +134,44 @@ class _OUpcomingMatchesState extends State<OUpcomingMatches> {
                     SizedBox(height: 10),
                     MatchScoreRow(),
                     SizedBox(height: 10),
+
+                    Center(
+                      child: Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 10,
+                          vertical: 8,
+                        ),
+                        decoration: BoxDecoration(
+                          color: kSecondaryColor,
+                          borderRadius: BorderRadius.circular(50),
+                        ),
+                        child: MyText(
+                          text: 'Danish Bar',
+                          size: 12,
+                          color: kPrimaryColor,
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 10),
                     MatchScoreRow(),
+                    SizedBox(height: 10),
+                    Center(
+                      child: Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 10,
+                          vertical: 8,
+                        ),
+                        decoration: BoxDecoration(
+                          color: kSecondaryColor,
+                          borderRadius: BorderRadius.circular(50),
+                        ),
+                        child: MyText(
+                          text: 'Whismas Club',
+                          size: 12,
+                          color: kPrimaryColor,
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),

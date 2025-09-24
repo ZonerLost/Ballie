@@ -6,6 +6,14 @@ class Assets {
   /// assets/images/account_settings.png
   static const String imagesAccountSettings = "assets/images/account_settings.png";
 
+  /// Assets for imagesAdd
+  /// assets/images/add.png
+  static const String imagesAdd = "assets/images/add.png";
+
+  /// Assets for imagesAddImage
+  /// assets/images/add_image.png
+  static const String imagesAddImage = "assets/images/add_image.png";
+
   /// Assets for imagesAppFeedback
   /// assets/images/app_feedback.png
   static const String imagesAppFeedback = "assets/images/app_feedback.png";
@@ -189,6 +197,10 @@ class Assets {
   /// Assets for imagesMap
   /// assets/images/map.png
   static const String imagesMap = "assets/images/map.png";
+
+  /// Assets for imagesMarker
+  /// assets/images/marker.png
+  static const String imagesMarker = "assets/images/marker.png";
 
   /// Assets for imagesMatchReviewBg
   /// assets/images/match_review_bg.png
