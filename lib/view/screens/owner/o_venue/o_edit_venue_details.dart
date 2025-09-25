@@ -7,15 +7,22 @@ import 'package:ballie/view/widget/common_image_view_widget.dart';
 import 'package:ballie/view/widget/custom_app_bar_widget.dart';
 import 'package:ballie/view/widget/custom_check_box_widget.dart';
 import 'package:ballie/view/widget/custom_container_widget.dart';
-import 'package:ballie/view/widget/my_button_widget.dart';
 import 'package:ballie/view/widget/my_text_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_navigation/get_navigation.dart';
-import 'package:get/instance_manager.dart';
+// ...existing code...
 
-class OEditVenueDetails extends StatelessWidget {
+class OEditVenueDetails extends StatefulWidget {
   const OEditVenueDetails({super.key});
+
+  @override
+  State<OEditVenueDetails> createState() => _OEditVenueDetailsState();
+}
+
+class _OEditVenueDetailsState extends State<OEditVenueDetails> {
+  int currentSelected = 0;
+  List<bool> nextMatchEnabled = List.generate(3, (_) => true);
+  List<bool> offersEnabled = List.generate(3, (_) => true);
 
   @override
   Widget build(BuildContext context) {
@@ -45,8 +52,12 @@ class OEditVenueDetails extends StatelessWidget {
                         spacing: 16,
                         children: [
                           CustomCheckBox(
-                            isActive: index == 0,
-                            onTap: () {},
+                            isActive: currentSelected == index,
+                            onTap: () {
+                              setState(() {
+                                currentSelected = index;
+                              });
+                            },
                             isRadio: true,
                           ),
                           Expanded(
@@ -218,8 +229,12 @@ class OEditVenueDetails extends StatelessWidget {
                                 width: 25 / 0.62,
                                 child: CupertinoSwitch(
                                   activeTrackColor: kSecondaryColor,
-                                  value: true,
-                                  onChanged: (val) {},
+                                  value: nextMatchEnabled[index],
+                                  onChanged: (val) {
+                                    setState(() {
+                                      nextMatchEnabled[index] = val;
+                                    });
+                                  },
                                 ),
                               ),
                             ),
@@ -290,8 +305,12 @@ class OEditVenueDetails extends StatelessWidget {
                                 width: 25 / 0.62,
                                 child: CupertinoSwitch(
                                   activeTrackColor: kSecondaryColor,
-                                  value: true,
-                                  onChanged: (val) {},
+                                  value: offersEnabled[index],
+                                  onChanged: (val) {
+                                    setState(() {
+                                      offersEnabled[index] = val;
+                                    });
+                                  },
                                 ),
                               ),
                             ),

@@ -4,6 +4,8 @@ import 'package:ballie/constants/app_sizes.dart';
 import 'package:ballie/main.dart';
 import 'package:ballie/view/screens/watcher/w_home/w_all_leagues.dart';
 import 'package:ballie/view/screens/watcher/w_home/w_league_matches.dart';
+import 'package:ballie/view/screens/watcher/w_live_football_locations/w_match_screening.dart';
+import 'package:ballie/view/screens/watcher/w_live_football_locations/w_venues_in_your_area.dart';
 import 'package:ballie/view/screens/watcher/w_notifications/w_notifications.dart';
 import 'package:ballie/view/screens/watcher/w_scan/w_scan.dart';
 import 'package:ballie/view/widget/blur_container_widget.dart';
@@ -220,7 +222,12 @@ class WHome extends StatelessWidget {
               ),
             ),
             SizedBox(height: 30),
-            _HeadingTile(title: 'Live matches in your region', onTap: () {}),
+            _HeadingTile(
+              title: 'Live matches in your region',
+              onTap: () {
+                Get.to(() => WLeagueMatches());
+              },
+            ),
             SizedBox(height: 12),
             BlurContainer(
               child: Padding(
@@ -534,7 +541,12 @@ class WHome extends StatelessWidget {
             ),
 
             SizedBox(height: 20),
-            _HeadingTile(title: 'Nearby Venues', onTap: () {}),
+            _HeadingTile(
+              title: 'Nearby Venues',
+              onTap: () {
+                Get.to(() => WVenuesInYourArea());
+              },
+            ),
             SizedBox(height: 12),
             GridView.builder(
               shrinkWrap: true,
@@ -549,7 +561,9 @@ class WHome extends StatelessWidget {
               itemCount: 2,
               itemBuilder: (context, index) {
                 return GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Get.to(() => WMatchScreening());
+                  },
                   child: BlurContainer(
                     radius: 10,
                     child: Padding(

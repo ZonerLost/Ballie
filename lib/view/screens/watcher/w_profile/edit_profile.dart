@@ -19,7 +19,7 @@ class EditProfile extends StatelessWidget {
     return CustomContainer(
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        appBar: simpleAppBar(title: 'Profile Settings'),
+        appBar: simpleAppBar(title: 'Account Settings'),
         body: ListView(
           shrinkWrap: true,
           padding: AppSizes.DEFAULT,

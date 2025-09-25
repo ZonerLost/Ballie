@@ -5,6 +5,8 @@ import 'package:ballie/main.dart';
 import 'package:ballie/view/screens/owner/o_home/o_all_leagues.dart';
 import 'package:ballie/view/screens/owner/o_home/o_league_matches.dart';
 import 'package:ballie/view/screens/owner/o_notifications/o_notifications.dart';
+import 'package:ballie/view/screens/owner/o_venue/o_edit_venue_details.dart';
+import 'package:ballie/view/screens/owner/o_venue/o_venue_detail.dart';
 import 'package:ballie/view/widget/blur_container_widget.dart';
 import 'package:ballie/view/widget/common_image_view_widget.dart';
 import 'package:ballie/view/widget/custom_container_widget.dart';
@@ -64,8 +66,10 @@ class OHome extends StatelessWidget {
           padding: AppSizes.DEFAULT,
           physics: BouncingScrollPhysics(),
           children: [
+            MyText(text: 'Ballie for You', size: 22, weight: FontWeight.w600),
+            SizedBox(height: 30),
             BlurContainer(
-              radius: 10,
+              radius: 16,
               child: Padding(
                 padding: EdgeInsets.all(12),
                 child: Column(
@@ -216,7 +220,13 @@ class OHome extends StatelessWidget {
                           weight: FontWeight.w600,
                         ),
                       ),
-                      MyText(text: 'View All', size: 12),
+                      MyText(
+                        text: 'View All',
+                        size: 12,
+                        onTap: () {
+                          Get.to(() => OLeagueMatches());
+                        },
+                      ),
                     ],
                   ),
                   SizedBox(height: 10),
@@ -278,13 +288,27 @@ class OHome extends StatelessWidget {
                 ],
               ),
             ),
-            MyText(
-              text: 'Venues',
-              size: 16,
-              weight: FontWeight.w500,
-              paddingTop: 20,
-              paddingBottom: 12,
+            SizedBox(height: 20),
+            Row(
+              children: [
+                Expanded(
+                  child: MyText(
+                    text: 'Venues',
+                    size: 16,
+                    weight: FontWeight.w500,
+                  ),
+                ),
+                MyText(
+                  text: 'Edit',
+                  size: 14,
+                  color: kSecondaryColor,
+                  onTap: () {
+                    Get.to(() => OEditVenueDetails());
+                  },
+                ),
+              ],
             ),
+            SizedBox(height: 12),
             GridView.builder(
               shrinkWrap: true,
               padding: AppSizes.ZERO,
@@ -298,28 +322,26 @@ class OHome extends StatelessWidget {
               itemCount: 2,
               itemBuilder: (context, index) {
                 return GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Get.to(() => OVenueDetail());
+                  },
                   child: BlurContainer(
                     radius: 10,
                     child: Padding(
                       padding: const EdgeInsets.all(10),
                       child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Expanded(
                             child: CommonImageView(
-                              url: dummyImg,
+                              imagePath: Assets.imagesDummyMap,
                               width: Get.width,
                               fit: BoxFit.cover,
                               radius: 6,
                             ),
                           ),
-                          MyText(
-                            paddingTop: 10,
-                            text: 'Danish Bar',
-                            size: 10,
-                            color: kQuaternaryColor,
-                          ),
+                          MyText(paddingTop: 10, text: 'Danish Bar', size: 12),
                         ],
                       ),
                     ),

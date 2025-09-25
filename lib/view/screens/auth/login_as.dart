@@ -45,7 +45,7 @@ class LoginAs extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Image.asset(Assets.imagesLogoRounded, height: 56),
+          Image.asset(Assets.imagesLogo, height: 70),
           MyText(
             paddingTop: 30,
             text: 'Login As',

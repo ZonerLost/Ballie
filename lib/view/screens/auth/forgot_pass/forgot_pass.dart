@@ -47,7 +47,7 @@ class _ForgotPassword extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
       physics: BouncingScrollPhysics(),
       children: [
-        Image.asset(Assets.imagesLogoRounded, height: 56),
+        Image.asset(Assets.imagesLogo, height: 70),
         MyText(
           paddingTop: 30,
           text: 'Verify your account',

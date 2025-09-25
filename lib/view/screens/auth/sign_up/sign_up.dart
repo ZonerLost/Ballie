@@ -46,7 +46,7 @@ class _SignUp extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
       physics: BouncingScrollPhysics(),
       children: [
-        Image.asset(Assets.imagesLogoRounded, height: 56),
+        Image.asset(Assets.imagesLogo, height: 70),
         SizedBox(height: 30),
         MyTextField(
           labelText: 'Full Name',

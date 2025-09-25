@@ -2,6 +2,7 @@ import 'package:ballie/constants/app_colors.dart';
 import 'package:ballie/constants/app_images.dart';
 import 'package:ballie/constants/app_sizes.dart';
 import 'package:ballie/main.dart';
+import 'package:ballie/view/screens/auth/login_as.dart';
 import 'package:ballie/view/screens/watcher/w_mini_game/w_mini_game.dart';
 import 'package:ballie/view/screens/watcher/w_profile/edit_profile.dart';
 import 'package:ballie/view/screens/watcher/w_profile/language.dart';
@@ -228,11 +229,11 @@ class WProfile extends StatelessWidget {
                         Get.to(() => Languages());
                       },
                     ),
-                    _ProfileTile(
-                      icon: Assets.imagesFont,
-                      title: 'Font',
-                      onTap: () {},
-                    ),
+                    // _ProfileTile(
+                    //   icon: Assets.imagesFont,
+                    //   title: 'Font',
+                    //   onTap: () {},
+                    // ),
                     _ProfileTile(
                       icon: Assets.imagesAppFeedback,
                       title: 'App Feedback',
@@ -259,7 +260,9 @@ class WProfile extends StatelessWidget {
                     _ProfileTile(
                       icon: Assets.imagesLogout,
                       title: 'Log Out',
-                      onTap: () {},
+                      onTap: () {
+                        Get.offAll(() => LoginAs());
+                      },
                     ),
                   ],
                 ),

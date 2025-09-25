@@ -13,8 +13,19 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
-class WCart extends StatelessWidget {
+class WCart extends StatefulWidget {
   const WCart({super.key});
+
+  @override
+  State<WCart> createState() => _WCartState();
+}
+
+class _WCartState extends State<WCart> {
+  List<bool> selected = List.generate(4, (_) => true);
+  List<bool> inCart = List.generate(4, (_) => true);
+
+  int get selectedCount => selected.where((e) => e).length;
+  int get totalAmount => selectedCount * 100;
 
   @override
   Widget build(BuildContext context) {
@@ -24,14 +35,22 @@ class WCart extends StatelessWidget {
         appBar: simpleAppBar(title: 'Cart'),
         body: ListView.separated(
           separatorBuilder: (context, index) => SizedBox(height: 12),
-          itemCount: 4,
+          itemCount: inCart.length,
           padding: AppSizes.DEFAULT,
           physics: BouncingScrollPhysics(),
           shrinkWrap: true,
           itemBuilder: (context, index) {
+            if (!inCart[index]) return SizedBox.shrink();
             return Row(
               children: [
-                CustomCheckBox(isActive: true, onTap: () {}),
+                CustomCheckBox(
+                  isActive: selected[index],
+                  onTap: () {
+                    setState(() {
+                      selected[index] = !selected[index];
+                    });
+                  },
+                ),
                 SizedBox(width: 12),
                 Expanded(
                   child: GestureDetector(
@@ -85,11 +104,18 @@ class WCart extends StatelessWidget {
                               ],
                             ),
                           ),
-                          Image.asset(
-                            Assets.imagesTrash,
-                            height: 22,
-                            width: 22,
-                            color: kSecondaryColor,
+                          GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                inCart[index] = false;
+                              });
+                            },
+                            child: Image.asset(
+                              Assets.imagesTrash,
+                              height: 22,
+                              width: 22,
+                              color: kSecondaryColor,
+                            ),
                           ),
                         ],
                       ),
@@ -119,7 +145,7 @@ class WCart extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           MyText(
-                            text: '2 x items selected',
+                            text: '${selectedCount} x items selected',
                             size: 12,
                             color: kSecondaryColor,
                             paddingBottom: 4,
@@ -140,7 +166,7 @@ class WCart extends StatelessWidget {
                               ),
                               MyText(
                                 paddingLeft: 4,
-                                text: '100',
+                                text: totalAmount.toString(),
                                 size: 15,
                                 weight: FontWeight.w600,
                                 color: kSecondaryColor,

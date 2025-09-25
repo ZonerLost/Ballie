@@ -168,10 +168,6 @@ class WNewsDetails extends StatelessWidget {
             ),
           ],
         ),
-        bottomNavigationBar: Padding(
-          padding: AppSizes.DEFAULT,
-          child: MyButton(buttonText: 'Get Directions', onTap: () {}),
-        ),
       ),
     );
   }
